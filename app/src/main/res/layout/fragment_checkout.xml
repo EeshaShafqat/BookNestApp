@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:background="@color/white">
+
+    <!-- Top Row -->
+    <RelativeLayout
+        android:id="@+id/topRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp">
+
+        <!-- Back Arrow -->
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_back"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"/>
+
+
+        <TextView
+            android:id="@+id/tvCheckout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Checkout"
+            android:fontFamily="@font/opensans_semibold"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvDeliveryAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delivery Address"
+        android:textSize="20sp"
+        android:fontFamily="@font/opensans_semibold"
+        android:textColor="@color/black"
+        android:layout_below="@id/topRow"
+        android:layout_marginTop="30dp"/>
+
+    <!-- Address Box -->
+    <RelativeLayout
+        android:id="@+id/addressBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvDeliveryAddress"
+        android:background="@drawable/button_bg"
+        android:layout_marginTop="20dp"
+        android:visibility="visible">
+
+        <!-- Address Text -->
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="House No 79A, Street no 1, G10/3,
+Islamabad"
+            android:layout_marginRight="150dp"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_alignParentStart="true"
+            android:padding="20dp"
+            android:fontFamily="@font/opensans_regular"/>
+
+        <!-- Change Text -->
+        <TextView
+            android:id="@+id/tvChange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/opensans_regular"/>
+    </RelativeLayout>
+
+    <!-- Add New Delivery Address Button -->
+    <Button
+        android:id="@+id/btnAddAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add a New Delivery Address"
+        android:layout_below="@id/addressBox"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button2_bg"
+        android:textAllCaps="false"
+        android:fontFamily="@font/opensans_semibold"
+        android:textSize="14sp"/>
+
+    <EditText
+        android:id="@+id/etNewAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnAddAddress"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button2_bg"
+        android:hint="Enter new address"
+        android:visibility="visible"
+        android:padding="20dp"
+        android:inputType="textPostalAddress"
+        android:layout_marginRight="100dp"/>
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/etNewAddress"
+        android:layout_alignBottom="@id/etNewAddress"
+        android:gravity="center_vertical"
+        android:text="Save"
+        android:fontFamily="@font/opensans_semibold"
+        android:background="@drawable/button_bg"
+        android:textColor="@color/white"
+        android:visibility="visible"
+        android:layout_alignParentEnd="true"
+        android:paddingHorizontal="30dp"
+        />
+
+    <!-- Payment Method Heading -->
+    <TextView
+        android:id="@+id/tvPaymentMethod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Payment Method"
+        android:textSize="20sp"
+        android:fontFamily="@font/opensans_semibold"
+        android:layout_below="@id/etNewAddress"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"/>
+
+    <!-- Credit Card Option -->
+    <RelativeLayout
+        android:id="@+id/rlCreditCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvPaymentMethod"
+        android:padding="10dp"
+        android:layout_marginTop="10dp">
+
+        <!-- Circle Icon -->
+        <ImageView
+            android:id="@+id/ivCreditCard"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/emptycircle"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"/>
+
+        <!-- Credit Card Text -->
+        <TextView
+            android:id="@+id/tvCreditCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Credit Card"
+            android:textSize="16sp"
+            android:fontFamily="@font/opensans_semibold"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/ivCreditCard"
+            android:textColor="@color/lightBlack"/>
+
+        <ImageView
+            android:id="@+id/ivdropdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/down"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+
+
+    </RelativeLayout>
+
+    <!-- Cash on Delivery Option -->
+    <RelativeLayout
+        android:id="@+id/rlCashOnDelivery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rlCreditCard"
+        android:padding="10dp">
+
+        <!-- Circle Icon -->
+        <ImageView
+            android:id="@+id/ivCashOnDelivery"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/filledcircle"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"/>
+
+        <!-- Cash on Delivery Text -->
+        <TextView
+            android:id="@+id/tvCashOnDelivery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cash on Delivery"
+            android:textSize="16sp"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/opensans_semibold"
+            android:layout_toEndOf="@id/ivCashOnDelivery"
+            android:textColor="@color/lightBlack"/>
+    </RelativeLayout>
+
+
+    <Button
+
+        android:id="@+id/makePayment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pay Rs 4450"
+        android:background="@drawable/button_bg"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:layout_below="@id/rlCashOnDelivery"
+        android:layout_marginTop="130dp"/>
+
+</RelativeLayout>

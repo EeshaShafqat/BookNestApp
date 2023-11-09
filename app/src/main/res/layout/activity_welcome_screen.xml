@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/white">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="512dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-76dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cover" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="183dp"
+        android:layout_height="185dp"
+        android:layout_centerInParent="true"
+        app:cardBackgroundColor="#73594D"
+        app:cardCornerRadius="140dp"
+        app:cardElevation="20dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="182dp"
+            android:layout_height="182dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/logo"
+            app:civ_border_color="#FF674E42"
+            app:civ_border_width="4dp" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cardView"
+        android:text="Read more and stress less with our online book shopping app. Shop from anywhere you are and discover titles that you love. Happy reading!"
+        android:textAlignment="center"
+        android:textColor="@color/lightBlack"
+        android:fontFamily="@font/opensans_regular"
+        android:textSize="14sp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp" />
+
+    <Button
+
+        android:id="@+id/getStarted"
+        android:layout_above="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Get Started"
+        android:layout_marginHorizontal="20dp"
+        android:textAllCaps="false"
+        android:fontFamily="@font/opensans_semibold"
+        android:background="@drawable/button_bg"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        >
+
+    </Button>
+
+    <TextView
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:gravity="center_horizontal"
+        android:fontFamily="@font/opensans_semibold"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        >
+
+    </TextView>
+
+</RelativeLayout>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HomeFragment"
+    android:padding="20dp"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        app:iconifiedByDefault="false"
+        android:queryHint="Happy Reading"
+        android:layout_marginTop="60dp"
+        app:queryBackground="@null"
+        android:textColorHint="@color/lightBlack"
+        android:inputType="text"
+        >
+    </androidx.appcompat.widget.SearchView>
+
+
+    <ScrollView
+
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchview"
+        >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+    <TextView
+        android:id="@+id/BestDeals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Best Deals"
+        android:textSize="20sp"
+        android:fontFamily="@font/opensans_semibold"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/black"
+        />
+
+
+  <androidx.recyclerview.widget.RecyclerView
+
+      android:id="@+id/box1"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/BestDeals"
+      android:layout_marginTop="15dp"
+      />
+
+    <TextView
+
+        android:id="@+id/TopBooks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Top Books"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/box1"
+        android:fontFamily="@font/opensans_semibold"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+
+        android:id="@+id/seeMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="See More"
+        android:layout_alignTop="@id/TopBooks"
+        android:layout_alignBottom="@id/TopBooks"
+        android:layout_alignParentEnd="true"
+        android:gravity="center_vertical"
+        android:fontFamily="@font/opensans_regular"
+        android:textSize="14sp"
+        android:textColor="@color/black"/>
+
+    <RelativeLayout
+
+        android:id="@+id/buttonGroup"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_below="@id/TopBooks"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+
+            <Button
+                android:id="@+id/week"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@+id/Logout"
+                android:layout_alignParentStart="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/button_bg"
+                android:fontFamily="@font/opensans_semibold"
+                android:text="This Week"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/month"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@+id/week"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/button_bg_selector"
+                android:fontFamily="@font/opensans_semibold"
+                android:text="This Month"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/year"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@+id/Edit"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/button_bg_selector"
+                android:fontFamily="@font/opensans_semibold"
+                android:text="This Year"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:textAllCaps="false"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/box2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonGroup"
+        android:layout_marginTop="15dp"
+        />
+
+    <TextView
+
+        android:id="@+id/LatestBooks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latest Books"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/box2"
+        android:fontFamily="@font/opensans_semibold"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+
+        android:id="@+id/seeMore2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="See More"
+        android:layout_alignTop="@id/LatestBooks"
+        android:layout_alignBottom="@id/LatestBooks"
+        android:layout_alignParentEnd="true"
+        android:gravity="center_vertical"
+        android:fontFamily="@font/opensans_regular"
+        android:textSize="14sp"
+        android:textColor="@color/black"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/box3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/LatestBooks"
+        android:layout_marginTop="15dp"
+        />
+
+    <TextView
+
+        android:id="@+id/UpcomingBooks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upcoming Books"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/box3"
+        android:fontFamily="@font/opensans_semibold"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+
+        android:id="@+id/seeMore3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="See More"
+        android:layout_alignTop="@id/UpcomingBooks"
+        android:layout_alignBottom="@id/UpcomingBooks"
+        android:layout_alignParentEnd="true"
+        android:gravity="center_vertical"
+        android:fontFamily="@font/opensans_regular"
+        android:textSize="14sp"
+        android:textColor="@color/black"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/box4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/UpcomingBooks"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="50dp"
+            />
+
+
+
+    </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:background="@color/white">
+
+
+    <!-- Top Row -->
+    <RelativeLayout
+        android:id="@+id/topRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <!-- Back Arrow -->
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_back"
+            android:layout_alignParentStart="true"
+            android:paddingVertical="8dp"/>
+
+
+        <TextView
+            android:id="@+id/filterTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filter"
+            android:textSize="16sp"
+            android:fontFamily="@font/opensans_semibold"
+            android:textColor="@color/chocolate"
+            android:layout_centerInParent="true"
+            android:padding="8dp"/>
+
+        <!-- Reset Button -->
+        <TextView
+            android:id="@+id/resetButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:textSize="14sp"
+            android:textColor="@color/chocolate"
+            android:fontFamily="@font/opensans_regular"
+            android:layout_alignParentEnd="true"
+            android:padding="8dp"/>
+    </RelativeLayout>
+
+    <!-- Type Heading -->
+    <TextView
+        android:id="@+id/typeHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Type"
+        android:fontFamily="@font/opensans_semibold"
+        android:textSize="16sp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/topRow"
+        android:layout_marginBottom="25dp"
+        android:textColor="@color/chocolate"/>
+
+    <!-- Type Buttons -->
+    <RelativeLayout
+        android:id="@+id/typeButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/typeHeading"
+        >
+
+        <Button
+            android:id="@+id/paperBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Paper Back"
+            android:fontFamily="@font/opensans_semibold"
+            android:textSize="14sp"
+            android:background="@drawable/button_bg"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:layout_marginRight="10dp"/>
+
+        <Button
+            android:id="@+id/hardcoverButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hardcover"
+            android:fontFamily="@font/opensans_semibold"
+            android:textSize="14sp"
+            android:layout_toRightOf="@id/paperBackButton"
+            android:background="@drawable/button2_bg"
+            android:textColor="@color/black"
+            android:textAllCaps="false"/>
+
+
+    </RelativeLayout>
+
+
+
+    <TextView
+        android:id="@+id/priceRangeHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price Range"
+        android:fontFamily="@font/opensans_semibold"
+        android:textSize="16sp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/typeButtons"
+        android:layout_marginBottom="25dp"
+        android:textColor="@color/chocolate"/>
+
+    <TextView
+        android:id="@+id/priceRangeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rs 200-1000"
+        android:textSize="16sp"
+        android:textColor="@color/chocolate"
+        android:fontFamily="@font/opensans_regular"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@id/priceRangeHeading"
+        android:layout_alignBottom="@id/priceRangeHeading"/>
+
+    <!-- Price Range Slider -->
+    <SeekBar
+        android:id="@+id/priceRangeSlider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/priceRangeText"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="50dp"/>
+
+</RelativeLayout>

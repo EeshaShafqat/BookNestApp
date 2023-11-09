@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Top Row -->
+    <RelativeLayout
+
+        android:id="@+id/topRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp">
+
+       >
+
+        <!-- Back Arrow -->
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_back"
+            android:layout_alignParentStart="true"/>
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Classics"
+            android:textSize="14sp"
+            android:fontFamily="@font/opensans_semibold"
+            android:textColor="@color/black"
+            android:layout_centerInParent="true"/>
+
+        <!-- Cart Image -->
+        <ImageView
+            android:id="@+id/cartImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cart_black"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topRow"
+        android:text="The Picture of Dorian Gray"
+        android:textSize="24sp"
+        android:fontFamily="@font/opensans_semibold"
+        android:textColor="@color/black"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="30dp"/>
+    <!-- Second Row -->
+    <RelativeLayout
+        android:id="@+id/secondLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/heading"
+        android:layout_marginTop="20dp">
+
+        <!-- Left Side Image -->
+        <ImageView
+            android:id="@+id/leftImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dorian"
+            android:layout_alignParentStart="true"/>
+
+        <!-- Right Side Texts and Button -->
+        <RelativeLayout
+            android:id="@+id/rightSideLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/leftImage"
+            android:layout_alignTop="@id/leftImage"
+            android:layout_alignBottom="@id/leftImage"
+            android:layout_marginStart="16dp"
+            android:gravity="center_vertical">
+
+            <!-- Textviews -->
+            <TextView
+                android:id="@+id/author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Author: "
+                android:fontFamily="@font/opensans_regular"
+                android:textSize="14sp"
+                android:textColor="@color/lightBlack"/>
+
+            <TextView
+                android:id="@+id/getAuthor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Oscar Wilde"
+                android:layout_alignTop="@id/author"
+                android:layout_alignBottom="@id/author"
+                android:layout_toRightOf="@id/author"
+                android:fontFamily="@font/opensans_semibold"
+                android:textSize="14sp"
+                android:textColor="@color/lightBlack"
+                />
+
+            <TextView
+                android:id="@+id/category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category: "
+                android:layout_below="@id/author"
+                android:fontFamily="@font/opensans_regular"
+                android:textSize="14sp"
+                android:textColor="@color/lightBlack"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/getCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Classics"
+                android:layout_alignTop="@id/category"
+                android:layout_alignBottom="@id/category"
+                android:layout_toRightOf="@id/category"
+                android:fontFamily="@font/opensans_semibold"
+                android:textSize="14sp"
+                android:textColor="@color/lightBlack"
+                />
+
+            <TextView
+                android:id="@+id/rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rating: "
+                android:layout_below="@id/category"
+                android:fontFamily="@font/opensans_regular"
+                android:textSize="14sp"
+                android:textColor="@color/lightBlack"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/getRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.11/5"
+                android:layout_alignTop="@id/rating"
+                android:layout_alignBottom="@id/rating"
+                android:layout_toRightOf="@id/rating"
+                android:fontFamily="@font/opensans_semibold"
+                android:textSize="14sp"
+                android:textColor="@color/lightBlack"
+                />
+
+            <TextView
+                android:id="@+id/pricing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pricing: "
+                android:layout_below="@id/rating"
+                android:fontFamily="@font/opensans_regular"
+                android:textSize="14sp"
+                android:textColor="@color/lightBlack"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/getPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rs 200"
+                android:layout_alignTop="@id/pricing"
+                android:layout_alignBottom="@id/pricing"
+                android:layout_toRightOf="@id/pricing"
+                android:fontFamily="@font/opensans_semibold"
+                android:textSize="14sp"
+                android:textColor="@color/lightBlack"
+                />
+
+            <!-- Button -->
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Add to Cart"
+                android:layout_below="@id/pricing"
+                android:background="@drawable/button_bg"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:fontFamily="@font/opensans_semibold"
+                android:textAllCaps="false"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!-- Third Row -->
+    <RelativeLayout
+        android:id="@+id/thirdLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_below="@id/secondLayout">
+
+        <!-- Heading -->
+        <TextView
+            android:id="@+id/descriptionHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:fontFamily="@font/opensans_semibold"
+            android:textSize="14sp"
+            android:textColor="@color/black"/>
+
+        <!-- Description Text -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/descriptionHeading">
+
+            <TextView
+
+                android:id="@+id/descriptionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/chocolate"
+                android:fontFamily="@font/opensans_regular"
+                android:text="Oscar Wilde’s only novel is the dreamlike story of a young man who sells his soul for eternal youth and beauty. In this celebrated work Wilde forged a devastating portrait of the effects of evil and debauchery on a young aesthete in late-19th-century England. Combining elements of the Gothic horror novel and decadent French fiction, the book centers on a striking premise: As Dorian Gray sinks into a life of crime and gross sensuality, his body retains perfect youth and vigor while his recently painted portrait grows day by day into a hideous record of evil, which he must keep hidden from the world. For over a century, this mesmerizing tale of horror and suspense has enjoyed wide popularity. It ranks as one of Wilde's most important creations and among the classic achievements of its kind."/>
+
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>

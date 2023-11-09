@@ -1,0 +1,108 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Image View on the Left Side -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/book_cover"
+            android:scaleType="centerCrop"
+            android:contentDescription="Image" />
+
+        <!-- Vertical Layout for Text Content on the Right Side -->
+        <RelativeLayout
+            android:id="@+id/ll"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/imageView"
+            android:layout_alignTop="@id/imageView"
+            android:layout_alignBottom="@id/imageView"
+            android:padding="10dp"
+            android:background="@color/chocolate"
+            android:gravity="center_vertical">
+
+            <!-- Text Views for Content -->
+            <TextView
+                android:id="@+id/category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Novel"
+                android:textSize="10.85sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/opensans_light" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tuesday Mooney Talks to Ghosts"
+                android:textSize="15.2sp"
+                android:fontFamily="@font/opensans_semibold"
+                android:layout_below="@id/category"
+                android:textColor="#FFFFFF" />
+
+
+            <TextView
+                android:id="@+id/author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kate Racculia"
+                android:textSize="10.85sp"
+                android:layout_below="@id/title"
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rs 3300 "
+                android:textSize="21.71sp"
+                android:layout_below="@id/author"
+                android:fontFamily="@font/opensans_semibold"
+                android:textColor="#FFFFFF" />
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/price"
+                android:layout_alignBottom="@id/price"
+                android:layout_alignParentEnd="true"
+                android:gravity="center_vertical"
+                android:background="#FFFFFF"
+                android:paddingHorizontal="10dp">
+                <TextView
+                    android:id="@+id/discount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12"
+                    android:textSize="10.85sp"
+                    android:fontFamily="@font/opensans_bold"
+                    android:textColor="@color/black" />
+                <TextView
+                    android:id="@+id/percent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" % off"
+                    android:textSize="10.85sp"
+                    android:layout_toRightOf="@id/discount"
+                    android:fontFamily="@font/opensans_bold"
+                    android:textColor="@color/black" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

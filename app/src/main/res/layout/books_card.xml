@@ -1,0 +1,80 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/editText">
+
+        <!-- Image View at the Top -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:src="@drawable/book_cover"
+            android:contentDescription="Image"
+            android:paddingTop="20dp"/>
+
+        <!-- Vertical Layout for Text Content Below the Image -->
+        <RelativeLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="30dp"
+            android:background="@color/chocolate"
+            android:layout_below="@id/imageView">
+
+            <!-- Text Views for Content -->
+            <TextView
+                android:id="@+id/category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Classic"
+                android:textSize="10.85sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/opensans_light" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The Picture of Dorian Gray"
+                android:textSize="15.39sp"
+                android:fontFamily="@font/opensans_semibold"
+                android:layout_below="@id/category"
+                android:textColor="#FFFFFF" />
+
+
+            <TextView
+                android:id="@+id/author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kate Racculia"
+                android:textSize="10.99sp"
+                android:layout_below="@id/title"
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rs 3000"
+                android:textSize="21.98sp"
+                android:layout_alignParentBottom="true"
+                android:fontFamily="@font/opensans_semibold"
+                android:textColor="#FFFFFF" />
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
