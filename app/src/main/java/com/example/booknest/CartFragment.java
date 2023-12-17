@@ -11,6 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.booknest.databinding.BestDealCardBinding;
 
@@ -18,9 +21,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class CartFragment extends Fragment {
+public class CartFragment extends Fragment implements cartAdapter.OnCountChangeListener{
 
 
+    Cart cart;
+
+    private int shippingCost = 250;
+
+    // Display subtotal, shipping, and total in respective TextViews
+    TextView tvSubtotal;
+    TextView tvShipping;
+    TextView tvTotal;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,15 +41,41 @@ public class CartFragment extends Fragment {
 
         RecyclerView rv = view.findViewById(R.id.recyclerView);
 
-        List<bestDealModel> cartList = new ArrayList<>();
-        cartList.add(new bestDealModel(1,"Novel","Tuesday Mooney Talks to Ghosts","Kate Racculia","Rs. 3300"));
-        cartList.add(new bestDealModel(1,"Adult Narrative","Hello Dream","Cristina Camerena, Lady Desatia","Rs. 1000"));
 
-        cartAdapter adapter = new cartAdapter(getContext(),cartList);
+        cart = Cart.getInstance();
+
+        cartAdapter adapter = new cartAdapter(getContext(),cart.getCartItems(),this);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         rv.setLayoutManager(layoutManager);
         rv.setAdapter(adapter);
+
+        // Display subtotal, shipping, and total in respective TextViews
+        tvSubtotal = view.findViewById(R.id.getSubtotal);
+        tvShipping = view.findViewById(R.id.getShipping);
+        tvTotal = view.findViewById(R.id.getTotal);
+
+
+        // Calculate total initially and set the values
+        int[] prices = calculateTotalPrice(cart.getCartItems());
+        int subtotal = prices[0];
+        int totalPrice = prices[1];
+
+        tvSubtotal.setText("Rs " + subtotal); // Update subtotal field
+        tvShipping.setText("Rs " + shippingCost); // Set shipping cost
+        tvTotal.setText("Rs " + totalPrice); // Update total field
+
+
+        // Get the cartImage view
+        ImageView cartImage = view.findViewById(R.id.cartImage);
+
+        // Check if the cartList is empty and update visibility of cartImage
+        if (cart.getCartItems().isEmpty()) {
+            cartImage.setVisibility(View.VISIBLE);
+        } else {
+            cartImage.setVisibility(View.GONE);
+        }
+
 
 
 
@@ -63,5 +100,39 @@ public class CartFragment extends Fragment {
 
         return view;
 
+    }
+
+
+    // Function to calculate total price of items in the cart and include shipping cost
+    private int[] calculateTotalPrice(List<bestDealModel> cartItems) {
+        int totalPrice = 0;
+        int subtotal = 0;
+
+        for (bestDealModel item : cartItems) {
+            String priceString = item.getBookPrice().replaceAll("\\D+", ""); // Remove non-digit characters
+            int price = Integer.parseInt(priceString);
+            int count = item.getCount();
+            subtotal += (price * count);
+        }
+
+        // Calculate total cost (subtotal + shipping cost)
+        totalPrice = subtotal + shippingCost;
+
+        return new int[]{subtotal, totalPrice}; // Return both subtotal and total price
+    }
+
+
+    @Override
+    public void onCountChanged() {
+        int[] prices = calculateTotalPrice(cart.getCartItems());
+        int subtotal = prices[0];
+        int totalPrice = prices[1];
+
+
+        tvSubtotal.setText("Rs " + subtotal); // Update subtotal field
+        tvShipping.setText("Rs " + shippingCost); // Set shipping cost
+        tvTotal.setText("Rs " + totalPrice); // Update total field
+
+       // Toast.makeText(requireContext(), "Subtotal: " + subtotal + "\nTotal Price (including shipping): " + totalPrice, Toast.LENGTH_LONG).show();
     }
 }

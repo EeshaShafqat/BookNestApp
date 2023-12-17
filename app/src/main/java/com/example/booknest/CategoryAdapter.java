@@ -13,6 +13,13 @@ import java.util.List;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyViewHolder> {
 
+
+    // Define interface for item click listener
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    private OnItemClickListener listener;
     Context context;
     List<String> ls;
     public CategoryAdapter(Context context, List<String> ls) {
@@ -23,14 +30,14 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
 
     @NonNull
     @Override
-    public CategoryAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View row = LayoutInflater.from(context).inflate(R.layout.category_card,parent,false);
-        return new CategoryAdapter.MyViewHolder(row);
+        return new MyViewHolder(row);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CategoryAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
         holder.CategoryName.setText(ls.get(position));
 
@@ -49,6 +56,22 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
 
             CategoryName = itemView.findViewById(R.id.categoryName);
 
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            listener.onItemClick(position);
+                        }
+                    }
+                }
+            });
+
         }
+    }
+
+    public void setListener(OnItemClickListener listener) {
+        this.listener = listener;
     }
 }

@@ -35,13 +35,28 @@
             />
     </RelativeLayout>
 
+    <!-- Cart Image -->
+    <ImageView
+        android:id="@+id/cartImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/empty_cart"
+        android:layout_marginTop="40dp"
+        android:visibility="gone"
+        android:layout_below="@id/topRow"
+        android:layout_above="@id/summary"/>
+
+
+
     <!-- Scroll View -->
     <ScrollView
 
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/topRow">
+        android:layout_below="@id/topRow"
+        android:layout_marginTop="20dp">
 
         <RelativeLayout
 
@@ -53,108 +68,119 @@
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"/>
-
-            <!-- Order Summary Heading -->
-            <TextView
-                android:id="@+id/tvOrderSummary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/recyclerView"
-                android:text="Order Summary"
-                android:textSize="20sp"
-                android:fontFamily="@font/opensans_semibold"
-                android:layout_marginTop="30dp"
-                android:textColor="@color/black"/>
-
-            <!-- Subtotal -->
-            <TextView
-                android:id="@+id/tvSubtotal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Subtotal"
-                android:layout_below="@id/tvOrderSummary"
-                android:layout_marginTop="20dp"
-                android:textSize="16sp"
-                android:fontFamily="@font/opensans_regular"
-                android:textColor="@color/lightBlack"/>
-
-            <TextView
-                android:id="@+id/getSubtotal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rs 4350"
-                android:layout_alignTop="@+id/tvSubtotal"
-                android:layout_alignBottom="@id/tvSubtotal"
-                android:layout_alignParentEnd="true"
-                android:textSize="16sp"
-                android:fontFamily="@font/opensans_semibold"
-                android:textColor="@color/lightBlack"
                 />
 
-            <!-- Shipping -->
-            <TextView
-                android:id="@+id/tvShipping"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Shipping"
-                android:textSize="16sp"
-                android:fontFamily="@font/opensans_regular"
-                android:layout_below="@id/tvSubtotal"
-                android:textColor="@color/lightBlack"/>
 
-            <TextView
-                android:id="@+id/getShipping"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rs 250"
-                android:layout_alignTop="@+id/tvShipping"
-                android:layout_alignBottom="@id/tvShipping"
-                android:layout_alignParentEnd="true"
-                android:textSize="16sp"
-                android:fontFamily="@font/opensans_semibold"
-                android:textColor="@color/lightBlack"
-                />
-
-            <View
-                android:id="@+id/line"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_below="@id/tvShipping"
-                android:layout_marginTop="5dp"
-                android:background="@color/chocolate"/>
-
-
-            <!-- Total -->
-            <TextView
-                android:id="@+id/tvTotal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Total"
-                android:textSize="16sp"
-                android:fontFamily="@font/opensans_regular"
-                android:layout_below="@id/line"
-                android:layout_marginTop="5dp"
-                android:textColor="@color/lightBlack"/>
-
-            <TextView
-                android:id="@+id/getTotal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rs 4550"
-                android:layout_alignTop="@+id/tvTotal"
-                android:layout_alignBottom="@id/tvTotal"
-                android:layout_alignParentEnd="true"
-                android:textSize="16sp"
-                android:fontFamily="@font/opensans_semibold"
-                android:textColor="@color/lightBlack"
-                />
 
 
 
         </RelativeLayout>
-
     </ScrollView>
+
+    <RelativeLayout
+
+        android:id="@+id/summary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/scrollView">
+
+
+    <!-- Order Summary Heading -->
+    <TextView
+        android:id="@+id/tvOrderSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Summary"
+        android:textSize="20sp"
+        android:fontFamily="@font/opensans_semibold"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"/>
+
+    <!-- Subtotal -->
+    <TextView
+        android:id="@+id/tvSubtotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Subtotal"
+        android:layout_below="@id/tvOrderSummary"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/opensans_regular"
+        android:textColor="@color/lightBlack"/>
+
+    <TextView
+        android:id="@+id/getSubtotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rs 4350"
+        android:layout_alignTop="@+id/tvSubtotal"
+        android:layout_alignBottom="@id/tvSubtotal"
+        android:layout_alignParentEnd="true"
+        android:textSize="16sp"
+        android:fontFamily="@font/opensans_semibold"
+        android:textColor="@color/lightBlack"
+        />
+
+    <!-- Shipping -->
+    <TextView
+        android:id="@+id/tvShipping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shipping"
+        android:textSize="16sp"
+        android:fontFamily="@font/opensans_regular"
+        android:layout_below="@id/tvSubtotal"
+        android:textColor="@color/lightBlack"/>
+
+    <TextView
+        android:id="@+id/getShipping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rs 250"
+        android:layout_alignTop="@+id/tvShipping"
+        android:layout_alignBottom="@id/tvShipping"
+        android:layout_alignParentEnd="true"
+        android:textSize="16sp"
+        android:fontFamily="@font/opensans_semibold"
+        android:textColor="@color/lightBlack"
+        />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/tvShipping"
+        android:layout_marginTop="5dp"
+        android:background="@color/chocolate"/>
+
+
+    <!-- Total -->
+    <TextView
+        android:id="@+id/tvTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total"
+        android:textSize="16sp"
+        android:fontFamily="@font/opensans_regular"
+        android:layout_below="@id/line"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/lightBlack"/>
+
+    <TextView
+        android:id="@+id/getTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rs 4550"
+        android:layout_alignTop="@+id/tvTotal"
+        android:layout_alignBottom="@id/tvTotal"
+        android:layout_alignParentEnd="true"
+        android:textSize="16sp"
+        android:fontFamily="@font/opensans_semibold"
+        android:textColor="@color/lightBlack"
+        />
+
+
+
 
     <Button
 
@@ -162,11 +188,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Proceed to Checkout"
-        android:layout_below="@id/scrollView"
+        android:layout_below="@id/getTotal"
         android:background="@drawable/button_bg"
         android:textColor="@color/white"
         android:textAllCaps="false"
         android:layout_marginTop="30dp"
         />
+    </RelativeLayout>
 
 </RelativeLayout>

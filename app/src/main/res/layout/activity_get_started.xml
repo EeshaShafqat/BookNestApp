@@ -51,7 +51,7 @@
         android:layout_height="56dp"
         android:layout_below="@id/fillDetails"
         android:background="@drawable/edittext_bg"
-        android:hint="Username/email"
+        android:hint="Email"
         android:textColorHint="@color/lightBlack"
         android:paddingLeft="11dp"
         android:textSize="14sp"
@@ -73,6 +73,7 @@
         android:layout_marginTop="32dp"/>
     
     <ImageView
+        android:id="@+id/showhide_password"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:src="@drawable/eye"

@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/account"
+        android:title="Account"
+        android:icon="@drawable/selector_account_icon"
+        android:titleTextAppearance="?android:attr/textAppearanceMedium"/>
+
     <item
         android:id="@+id/home"
         android:title="Home"
@@ -19,9 +27,5 @@
         android:icon="@drawable/selector_cart_icon"
         android:titleTextAppearance="?android:attr/textAppearanceMedium"/>
 
-    <item
-        android:id="@+id/account"
-        android:title="Account"
-        android:icon="@drawable/selector_account_icon"
-        android:titleTextAppearance="?android:attr/textAppearanceMedium"/>
+
 </menu>

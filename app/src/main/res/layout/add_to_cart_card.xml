@@ -17,8 +17,8 @@
         <!-- Image View on the Left Side -->
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="130dp"
             android:src="@drawable/book_cover"
             android:scaleType="centerCrop"
             android:contentDescription="Image" />
@@ -46,6 +46,8 @@
                 android:fontFamily="@font/opensans_light" />
 
             <ImageView
+
+                android:id="@+id/remove"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/close"
@@ -81,6 +83,8 @@
                 android:layout_marginTop="8dp">
 
                 <ImageView
+
+                    android:id="@+id/minus"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/subtract_box"
@@ -97,6 +101,8 @@
                     android:textColor="@color/white"/>
 
                 <ImageView
+
+                    android:id="@+id/plus"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/add_box"

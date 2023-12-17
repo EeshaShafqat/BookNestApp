@@ -1,0 +1,87 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insert a book"
+        android:fontFamily="@font/opensans_bold"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"/>
+
+
+
+    <EditText
+        android:id="@+id/editTextBookCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/heading"
+        android:hint="Book Category"
+        android:layout_marginTop="50dp"/>
+
+    <EditText
+        android:id="@+id/editTextBookTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextBookCategory"
+        android:hint="Book Title"/>
+
+    <EditText
+        android:id="@+id/editTextBookAuthor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextBookTitle"
+        android:hint="Book Author"/>
+
+    <EditText
+        android:id="@+id/editTextBookPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextBookAuthor"
+        android:hint="Book Price"/>
+
+    <EditText
+        android:id="@+id/editTextDiscount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextBookPrice"
+        android:hint="Discount"/>
+
+
+
+    <EditText
+        android:id="@+id/rvType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextDiscount"
+        android:hint="Recycler View Type"/>
+
+    <ImageView
+        android:id="@+id/imageViewBookImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/rvType"
+        android:src="@drawable/book_cover"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:onClick="selectImageFromGallery"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/buttonInsertBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageViewBookImage"
+        android:text="Insert Book"
+        android:textColor="@color/white"
+        android:background="@drawable/button_bg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textAllCaps="false"/>
+
+</RelativeLayout>

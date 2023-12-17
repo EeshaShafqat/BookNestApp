@@ -8,6 +8,29 @@
     android:padding="20dp"
     android:background="@color/white">
 
+    <TextView
+        android:id="@+id/Welcometext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome,"
+        android:textSize="25sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:id="@+id/TextViewHomeUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Loading.."
+        android:textSize="30dp"
+        android:layout_marginTop="7dp"
+        android:paddingLeft="10dp"
+        android:textColor="#ff9800"
+        android:layout_toRightOf="@+id/Welcometext"
+        android:textStyle="bold"
+        />
+
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchview"
         android:layout_width="match_parent"
